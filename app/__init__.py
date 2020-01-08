@@ -53,7 +53,7 @@ def app():
             time.sleep(5)
             # WebDriverWait(browser, 5).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='pnnext']")))
         except (TimeoutException, WebDriverException) as e:
-            with open('pharmacies.json', 'w') as file:
+            with open('hospitals.json', 'w') as file:
                 json.dump(data, file)
-            print(f'got {len(data)} pharmacies in total')
+            print(f'got {len(data)} hospitals in total')
             break
