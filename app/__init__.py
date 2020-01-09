@@ -13,6 +13,45 @@ from tqdm import tqdm
 import time
 import json
 
+
+locations = ['Kigali','Bugesera',
+'Gatsibo',
+'Kayonza',
+'Kirehe',
+'Ngoma',
+'Nyagatare',
+'Rwamagana',
+'Gasabo',
+'Kicukiro',
+'Nyarugenge',
+'Burera',
+'Gakenke',
+'Gicumbi',
+'Musanze',
+'Rulindo',
+'Gisagara',
+'Huye',
+'Kamonyi',
+'Muhanga',
+'Nyamagabe',
+'Nyanza',
+'Nyaruguru',
+'Ruhango',
+'Karongi',
+'Ngororero',
+'Nyabihu',
+'Nyamasheke',
+'Rubavu',
+'Rusizi',
+'Rutsiro']
+def getLocation(t):
+    location = t.split('\n')[-2]
+    if location in locations:
+        return location
+    else:
+        return 'No address'
+     
+
 def getTitle(t):
     return t.split('\n')[0].strip()
 
@@ -47,7 +86,8 @@ def app():
                 pbar.update(len(data) / 0.1)
                 pbar.desc = 'scraping'
                 for title in clinics:
-                    data.append({'name':getTitle(title.text), 'tel':getPhone(title.text)})
+                    
+                    data.append({'name':getTitle(title.text),'location':getLocation(title.text), 'tel':getPhone(title.text)})
             browser.find_element_by_xpath("//*[@id='pnnext']").click()
             time.sleep(5)
             # WebDriverWait(browser, 5).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='pnnext']")))
