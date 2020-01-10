@@ -1,6 +1,6 @@
 """
 Author: Igwaneza Bruce <knowbeeinc@gmail.com>
-Attempt to collect all clinics found in rwanda,
+Attempting to collect useful data from google maps
 Source: google maps
 """
 from selenium import webdriver
