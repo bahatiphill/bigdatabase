@@ -53,7 +53,8 @@ locations = [
 #     else:
 #         return 'No address'
 
-results = []    
+results = []
+country = 'Rwanda'    
 def getTitle(t):
     return t.split('\n')[0].strip()
 
@@ -73,14 +74,14 @@ def app():
         getByLocation(query, location, prompt)
         
     # after fetching everything, merge them into a single file
-    for f in glob.glob(f"{prompt}/*.json"):
+    for f in glob.glob(f"{country}/{prompt}/*.json"):
         with open(f, "r") as file:
             try:
                 for d in json.load(file):
                     results.append(d)
             except ValueError:
                 print(f)
-    with open(f"{prompt}.json", "w") as output:
+    with open(f"{country}/{prompt}.json", "w") as output:
         json.dump(results, output)
     print("done")
     
@@ -113,9 +114,9 @@ def getByLocation(query, location, prompt):
             time.sleep(5)
             # WebDriverWait(browser, 5).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='pnnext']")))
         except (TimeoutException, WebDriverException) as e:
-            if not os.path.exists(f'{prompt}'):
-                os.makedirs(f'{prompt}')
-            with open(f'{prompt}/{location}.json', 'w') as file:
+            if not os.path.exists(f'{country}/{prompt}'):
+                os.makedirs(f'{country}/{prompt}')
+            with open(f'{country}/{prompt}/{location}.json', 'w') as file:
                 json.dump(data, file)
             print(f'got {len(data)} {prompt} from {location}')
             break
