@@ -13,7 +13,7 @@ from tqdm import tqdm
 import time
 import json
 import os
-
+import glob
 
 locations = [
 'Bugesera',
@@ -52,7 +52,8 @@ locations = [
 #         return l
 #     else:
 #         return 'No address'
-     
+
+results = []    
 def getTitle(t):
     return t.split('\n')[0].strip()
 
@@ -71,7 +72,18 @@ def app():
         query = f"{formatted_prompt}+in+{location}"
         getByLocation(query, location, prompt)
         
-
+    # after fetching everything, merge them into a single file
+    for f in glob.glob(f"{prompt}/*.json"):
+        with open(f, "r") as file:
+            try:
+                for d in json.load(file):
+                    results.append(d)
+            except ValueError:
+                print(f)
+    with open(f"{prompt}.json", "w") as output:
+        json.dump(results, output)
+    print("done")
+    
 def getByLocation(query, location, prompt):
     options = webdriver.ChromeOptions()
 
@@ -102,5 +114,5 @@ def getByLocation(query, location, prompt):
                 os.makedirs(f'{prompt}')
             with open(f'{prompt}/{location}.json', 'w') as file:
                 json.dump(data, file)
-            print(f'got {len(data)} {prompt} in total')
+            print(f'got {len(data)} {prompt} from {location} in total')
             break
