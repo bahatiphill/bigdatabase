@@ -12,9 +12,11 @@ from rwavalidator import isPhoneNumber
 from tqdm import tqdm
 import time
 import json
+import os
 
 
-ls = ['Kigali','Bugesera',
+locations = [
+'Bugesera',
 'Gatsibo',
 'Kayonza',
 'Kirehe',
@@ -44,54 +46,61 @@ ls = ['Kigali','Bugesera',
 'Rubavu',
 'Rusizi',
 'Rutsiro']
-def getLocation(t):
-    l = t.split('\n')[-2]
-    if l in ls:
-        return l
-    else:
-        return 'No address'
+# def getLocation(t):
+#     l = t.split('\n')[-2]
+#     if l in ls:
+#         return l
+#     else:
+#         return 'No address'
      
 def getTitle(t):
     return t.split('\n')[0].strip()
 
-def getPhone(t):
-    p = t.split('⋅')[-1].split('·')[-1].replace(" ", "")
-    if isPhoneNumber(p):
-        return p
+def getPhone(text):
+    phone = text.split('⋅')[-1].split('·')[-1].replace(" ", "")
+    if isPhoneNumber(phone):
+        return phone
     else:
         return 'No phone number'
 
+
 def app():
-    n = str(input("What are you looking for?: "))
-    q = n.replace(" ", "+")
+    prompt = str(input("What are you looking for?: "))
+    formatted_prompt = prompt.replace(" ", "+")
+    for location in locations:
+        query = f"{formatted_prompt}+in+{location}"
+        getByLocation(query, location, prompt)
+        
+
+def getByLocation(query, location, prompt):
     options = webdriver.ChromeOptions()
 
     options.add_argument('headless')
 
     browser = webdriver.Chrome(options=options)
 
-    d=[]
+    data=[]
 
-    u = f"https://www.google.com/search?sxsrf=ACYBGNTuYn04lHdVfa6QBkoHVHDxaEfr0Q:1578597416649&q={q}&npsic=0&rflfq=1&rlha=0&tbm=lcl&ved=2ahUKEwjT1IzSnffmAhXn1uAKHaimC3EQjGp6BAgLEDQ&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:2&rldoc=1#rlfi=hd:;tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:2"
-    browser.get(u)
+    url = f"https://www.google.com/search?sxsrf=ACYBGNTuYn04lHdVfa6QBkoHVHDxaEfr0Q:1578597416649&q={query}&npsic=0&rflfq=1&rlha=0&tbm=lcl&ved=2ahUKEwjT1IzSnffmAhXn1uAKHaimC3EQjGp6BAgLEDQ&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:2&rldoc=1#rlfi=hd:;tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:2"
+    browser.get(url)
     while True:
         try:
-            p = browser.find_elements_by_class_name("pn")
-            c = browser.find_elements_by_class_name("cXedhc")
+            card = browser.find_elements_by_class_name("cXedhc")
             review_text = browser.find_elements_by_class_name(
                 "rllt__details")
            
-            with tqdm(total=len(d)) as pbar:
-                pbar.update(len(d) / 0.1)
+            with tqdm(total=len(data)) as pbar:
+                pbar.update(len(data) * 10)
                 pbar.desc = 'scraping'
-                for title in c:
-                    
-                    d.append({'name':getTitle(title.text),'location':getLocation(title.text), 'tel':getPhone(title.text)})
+                for title in card:
+                    data.append({'name':getTitle(title.text),'location':location, 'tel':getPhone(title.text)})
             browser.find_element_by_xpath("//*[@id='pnnext']").click()
             time.sleep(5)
             # WebDriverWait(browser, 5).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='pnnext']")))
         except (TimeoutException, WebDriverException) as e:
-            with open(f'{n}.json', 'w') as file:
-                json.dump(d, file)
-            print(f'got {len(d)} {n} in total')
+            if not os.path.exists(f'{prompt}'):
+                os.makedirs(f'{prompt}')
+            with open(f'{prompt}/{location}.json', 'w') as file:
+                json.dump(data, file)
+            print(f'got {len(data)} {prompt} in total')
             break

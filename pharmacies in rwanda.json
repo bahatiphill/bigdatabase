@@ -1,1 +1,212 @@
-[{"name": "Keystone Pharmacy", "location": "Kigali", "tel": "No phone number"}, {"name": "UR Pharmacy", "location": "No address", "tel": "No phone number"}, {"name": "National Pharmacy Council", "location": "Kigali", "tel": "No phone number"}, {"name": "Kipharma Pharmacy, Nyarugenge", "location": "Kigali", "tel": "No phone number"}, {"name": "Score Pharmacy", "location": "Kigali", "tel": "0783410790"}, {"name": "Tumba Pharmacy", "location": "Huye", "tel": "No phone number"}, {"name": "Pharmamed Pharmacy", "location": "Kigali", "tel": "0783164306"}, {"name": "Vine Pharmacy", "location": "Kigali", "tel": "No phone number"}, {"name": "Pharmacie Conseil", "location": "Kigali", "tel": "0781928457"}, {"name": "Farumasi", "location": "No address", "tel": "No phone number"}, {"name": "Sunshine Pharmacy", "location": "Kigali", "tel": "No phone number"}, {"name": "Score Pharmacy", "location": "No address", "tel": "No phone number"}, {"name": "Teta Pharmacy Kimironko", "location": "Kigali", "tel": "0789771322"}, {"name": "Farumasi", "location": "No address", "tel": "No phone number"}, {"name": "Pharmacy Divine", "location": "Kigali", "tel": "0789453089"}, {"name": "Pharmacie Le Normal", "location": "Kigali", "tel": "No phone number"}, {"name": "Royal Agrovet LTD Rwanda", "location": "No address", "tel": "0782752505"}, {"name": "Pharmacie Umurava", "location": "Kigali", "tel": "0788539713"}, {"name": "EZA Pharmacy", "location": "Kigali", "tel": "0785022763"}, {"name": "Pharmacie Shema", "location": "No address", "tel": "No phone number"}, {"name": "Victory", "location": "Huye", "tel": "0783043793"}, {"name": "Kipharma Pharmacy, Bridge (B2)", "location": "Kigali", "tel": "No phone number"}, {"name": "Memia's Pharmacy", "location": "Kigali", "tel": "0788310016"}, {"name": "IKAZE PHARMACY LTD", "location": "No address", "tel": "0788647959"}, {"name": "Pharmedica", "location": "Kigali", "tel": "No phone number"}, {"name": "Iraguha Pharmacy", "location": "No address", "tel": "0788237461"}, {"name": "Kipharma", "location": "No address", "tel": "No phone number"}, {"name": "Pharmacie Auberge", "location": "Kigali", "tel": "No phone number"}, {"name": "Pharmacy Vinca", "location": "No address", "tel": "0788455565"}, {"name": "Bovan Pharmacy", "location": "Kigali", "tel": "No phone number"}, {"name": "Dorrie Pharmacy", "location": "Kigali", "tel": "No phone number"}, {"name": "Iramiro Pharmacy", "location": "No address", "tel": "No phone number"}, {"name": "Safecare Pharmacy", "location": "Kigali", "tel": "0781293423"}, {"name": "Sanophar Pharmacy", "location": "No address", "tel": "No phone number"}, {"name": "Abacus Pharma Alam", "location": "No address", "tel": "No phone number"}, {"name": "Pharmacie Unique", "location": "Kigali", "tel": "0788309743"}, {"name": "Pharmacie Bora", "location": "No address", "tel": "No phone number"}, {"name": "Pharma Plus Pharmacy", "location": "No address", "tel": "No phone number"}, {"name": "Mulindi-Sugira Pharmacy", "location": "Kigali", "tel": "No phone number"}, {"name": "Gilmed Pharmaceutical Wholesale", "location": "Kigali", "tel": "0788888442"}, {"name": "Health Plus Pharmacy", "location": "No address", "tel": "No phone number"}, {"name": "Pharmacie Ingenzi", "location": "No address", "tel": "0783684112"}]
+[
+  {
+    "name": "Keystone Pharmacy",
+    "location": "Kigali",
+    "tel": "No phone number"
+  },
+  {
+    "name": "UR Pharmacy",
+    "location": "No address",
+    "tel": "No phone number"
+  },
+  {
+    "name": "National Pharmacy Council",
+    "location": "Kigali",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Kipharma Pharmacy, Nyarugenge",
+    "location": "Kigali",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Score Pharmacy",
+    "location": "Kigali",
+    "tel": "0783410790"
+  },
+  {
+    "name": "Tumba Pharmacy",
+    "location": "Huye",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Pharmamed Pharmacy",
+    "location": "Kigali",
+    "tel": "0783164306"
+  },
+  {
+    "name": "Vine Pharmacy",
+    "location": "Kigali",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Pharmacie Conseil",
+    "location": "Kigali",
+    "tel": "0781928457"
+  },
+  {
+    "name": "Farumasi",
+    "location": "No address",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Sunshine Pharmacy",
+    "location": "Kigali",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Score Pharmacy",
+    "location": "No address",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Teta Pharmacy Kimironko",
+    "location": "Kigali",
+    "tel": "0789771322"
+  },
+  {
+    "name": "Farumasi",
+    "location": "No address",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Pharmacy Divine",
+    "location": "Kigali",
+    "tel": "0789453089"
+  },
+  {
+    "name": "Pharmacie Le Normal",
+    "location": "Kigali",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Royal Agrovet LTD Rwanda",
+    "location": "No address",
+    "tel": "0782752505"
+  },
+  {
+    "name": "Pharmacie Umurava",
+    "location": "Kigali",
+    "tel": "0788539713"
+  },
+  {
+    "name": "EZA Pharmacy",
+    "location": "Kigali",
+    "tel": "0785022763"
+  },
+  {
+    "name": "Pharmacie Shema",
+    "location": "No address",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Victory",
+    "location": "Huye",
+    "tel": "0783043793"
+  },
+  {
+    "name": "Kipharma Pharmacy, Bridge (B2)",
+    "location": "Kigali",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Memia's Pharmacy",
+    "location": "Kigali",
+    "tel": "0788310016"
+  },
+  {
+    "name": "IKAZE PHARMACY LTD",
+    "location": "No address",
+    "tel": "0788647959"
+  },
+  {
+    "name": "Pharmedica",
+    "location": "Kigali",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Iraguha Pharmacy",
+    "location": "No address",
+    "tel": "0788237461"
+  },
+  {
+    "name": "Kipharma",
+    "location": "No address",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Pharmacie Auberge",
+    "location": "Kigali",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Pharmacy Vinca",
+    "location": "No address",
+    "tel": "0788455565"
+  },
+  {
+    "name": "Bovan Pharmacy",
+    "location": "Kigali",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Dorrie Pharmacy",
+    "location": "Kigali",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Iramiro Pharmacy",
+    "location": "No address",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Safecare Pharmacy",
+    "location": "Kigali",
+    "tel": "0781293423"
+  },
+  {
+    "name": "Sanophar Pharmacy",
+    "location": "No address",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Abacus Pharma Alam",
+    "location": "No address",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Pharmacie Unique",
+    "location": "Kigali",
+    "tel": "0788309743"
+  },
+  {
+    "name": "Pharmacie Bora",
+    "location": "No address",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Pharma Plus Pharmacy",
+    "location": "No address",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Mulindi-Sugira Pharmacy",
+    "location": "Kigali",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Gilmed Pharmaceutical Wholesale",
+    "location": "Kigali",
+    "tel": "0788888442"
+  },
+  {
+    "name": "Health Plus Pharmacy",
+    "location": "No address",
+    "tel": "No phone number"
+  },
+  {
+    "name": "Pharmacie Ingenzi",
+    "location": "No address",
+    "tel": "0783684112"
+  }
+]
