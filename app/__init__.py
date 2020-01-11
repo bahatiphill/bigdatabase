@@ -23,8 +23,35 @@ import threading
 
 locations = [
 'Bugesera',
+'Gatsibo',
+'Kayonza',
+'Kirehe',
+'Ngoma',
+'Nyagatare',
+'Rwamagana',
 'Gasabo',
-]
+'Kicukiro',
+'Nyarugenge',
+'Burera',
+'Gakenke',
+'Gicumbi',
+'Musanze',
+'Rulindo',
+'Gisagara',
+'Huye',
+'Kamonyi',
+'Muhanga',
+'Nyamagabe',
+'Nyanza',
+'Nyaruguru',
+'Ruhango',
+'Karongi',
+'Ngororero',
+'Nyabihu',
+'Nyamasheke',
+'Rubavu',
+'Rusizi',
+'Rutsiro']
 
 
 def app():
