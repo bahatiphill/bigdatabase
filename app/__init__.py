@@ -104,12 +104,10 @@ def getByLocation(query, location, prompt):
             card = browser.find_elements_by_class_name("cXedhc")
             review_text = browser.find_elements_by_class_name(
                 "rllt__details")
-           
-            with tqdm(total=len(data)) as pbar:
-                pbar.update(len(data) * 10)
-                pbar.desc = 'scraping'
-                for title in card:
-                    data.append({'name':getTitle(title.text),'location':location, 'tel':getPhone(title.text)})
+    
+            for title in tqdm(card):
+                data.append({'name':getTitle(title.text),'location':location, 'tel':getPhone(title.text)})
+            print("\n")
             browser.find_element_by_xpath("//*[@id='pnnext']").click()
             time.sleep(5)
             # WebDriverWait(browser, 5).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='pnnext']")))
