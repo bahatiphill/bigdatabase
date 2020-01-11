@@ -87,10 +87,13 @@ def app():
 def getByLocation(query, location, prompt):
     options = webdriver.ChromeOptions()
 
-    options.add_argument('headless')
-
-    browser = webdriver.Chrome(options=options)
-
+    options.add_argument("--headless")
+    options.add_argument("--disable-notifications")
+    options.add_argument("--log-level=3"); 
+    
+    browser = webdriver.Chrome(options=options, service_log_path=None)
+    
+    browser.delete_all_cookies()
     data=[]
 
     url = f"https://www.google.com/search?sxsrf=ACYBGNTuYn04lHdVfa6QBkoHVHDxaEfr0Q:1578597416649&q={query}&npsic=0&rflfq=1&rlha=0&tbm=lcl&ved=2ahUKEwjT1IzSnffmAhXn1uAKHaimC3EQjGp6BAgLEDQ&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:2&rldoc=1#rlfi=hd:;tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:2"
@@ -114,5 +117,5 @@ def getByLocation(query, location, prompt):
                 os.makedirs(f'{prompt}')
             with open(f'{prompt}/{location}.json', 'w') as file:
                 json.dump(data, file)
-            print(f'got {len(data)} {prompt} from {location} in total')
+            print(f'got {len(data)} {prompt} from {location}')
             break

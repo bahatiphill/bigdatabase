@@ -21,5 +21,5 @@ pipenv install
 ```cli
 python run.py
 
-prompt=> What are you looking for?: clinics in rwanda
+prompt=> What are you looking for?: clinics
 ```
