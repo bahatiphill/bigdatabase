@@ -1,6 +1,6 @@
 # BigDatabase
 
-Attempt to get useful data from google maps because it is fun
+Attempting to get useful data from google maps because it is fun
 
 ## Webdriver
 
